@@ -59,12 +59,28 @@ for (let employee in team) {
     printOnDom(team[employee].name, team[employee].role, team[employee].photo)
 }
 
+//Bonus 1 Trasformare la stringa foto in una immagine effettiva
 
+// function printOnDom(nome, ruolo, foto) {
+//     teamElement.innerHTML += `
+//     <div>Nome:   ${nome}</div> 
+//     <div>Ruolo:  ${ruolo}</div> 
+//     <img src="./img/${foto}"><br>
+//     `;
+// }
+
+//Bonus 2 Organizzare i singoli membri in card/schede
 
 function printOnDom(nome, ruolo, foto) {
     teamElement.innerHTML += `
-    <div>Nome:   ${nome}</div> 
-    <div>Ruolo:  ${ruolo}</div> 
-    <img src="./img/${foto}"><br>
+    <div class="col-4 mt-3 d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+            <img src="./img/${foto}" class="card-img-top" alt="foto di ${nome} ">
+            <div class="card-body">
+                <h5 class="card-title">${nome}</h5>
+                <p class="card-text">${ruolo}.</p>
+            </div> 
+        </div>
+    </div>
     `;
 }
