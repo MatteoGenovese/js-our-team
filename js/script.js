@@ -38,9 +38,9 @@ team = [{
     },
 ]
 
-for (let employee in team) {
-    printOnConsole(team[employee].name, team[employee].role, team[employee].photo)
-}
+// for (let employee in team) {
+//     printOnConsole(team[employee].name, team[employee].role, team[employee].photo)
+// }
 
 function printOnConsole(nome, ruolo, foto) {
     console.log(`
@@ -52,3 +52,19 @@ function printOnConsole(nome, ruolo, foto) {
 }
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
+
+const teamElement = document.getElementById("team");
+
+for (let employee in team) {
+    printOnDom(team[employee].name, team[employee].role, team[employee].photo)
+}
+
+
+
+function printOnDom(nome, ruolo, foto) {
+    teamElement.innerHTML += `
+    <div>Nome:   ${nome}</div> 
+    <div>Ruolo:  ${ruolo}</div> 
+    <div>Foto:   ${foto}</div> <br>
+    `;
+}
