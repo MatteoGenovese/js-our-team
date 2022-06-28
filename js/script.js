@@ -19,7 +19,7 @@ team = [{
     {
         name: "Walter Gordon",
         role: "Founder & CEO",
-        photo: " walter-gordon-office-manager.jpg"
+        photo: "walter-gordon-office-manager.jpg"
     },
     {
         name: "Angela Lopez",
@@ -65,6 +65,6 @@ function printOnDom(nome, ruolo, foto) {
     teamElement.innerHTML += `
     <div>Nome:   ${nome}</div> 
     <div>Ruolo:  ${ruolo}</div> 
-    <div>Foto:   ${foto}</div> <br>
+    <img src="./img/${foto}"><br>
     `;
 }
