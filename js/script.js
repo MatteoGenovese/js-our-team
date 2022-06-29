@@ -128,6 +128,9 @@ insertANewEmployeeButton.addEventListener('click', function() {
     //inserisci nell'array
     insertInDatabase(newName.value, newRole.value, newUrl.value);
 
+    newName.value = "";
+    newRole.value = "";
+    newUrl.value = "";
     printOnDom();
 
     printOnConsole();
