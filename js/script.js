@@ -42,8 +42,6 @@ const team = [{
 //     printOnConsole(team[employee].name, team[employee].role, team[employee].photo)
 // }
 
-
-
 function printOnConsole() {
     for (let employee in team) {
         console.log(`
@@ -84,9 +82,9 @@ function printOnDom() {
     //svuoto le informazioni che ci sono prima di ogni nuova stampa
     teamElement.innerHTML = "";
     for (employee in team) {
-        if ((team[employee].photo).includes('http')) {
 
-            console.log("sono nell'if");
+        //controllo se l'immagine arriva da un indirizzo web oppure all'interno di una cartella sul sito
+        if ((team[employee].photo).includes('http')) {
 
             teamElement.innerHTML += `
                 <div class="col-4 mt-3 d-flex justify-content-center">
@@ -100,9 +98,6 @@ function printOnDom() {
                 </div>
                 `;
         } else {
-
-            console.log("sono nell'else");
-            console.log(teamElement.innerHTML);
 
             teamElement.innerHTML += `
             <div class="col-4 mt-3 d-flex justify-content-center">
@@ -131,10 +126,8 @@ insertANewEmployeeButton.addEventListener('click', function() {
     const newUrl = document.getElementById("newUrl");
 
     //inserisci nell'array
-
     insertInDatabase(newName.value, newRole.value, newUrl.value);
 
-    //stampali
     printOnDom();
 
     printOnConsole();
